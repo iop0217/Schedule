@@ -7,12 +7,12 @@ import java.time.LocalDateTime;
 
 @Getter
 public class UserResponseDto {
-    private Long userId;
+    private Long id;
     private String userName;
     private LocalDateTime createDate;
 
     public UserResponseDto(User user) {
-        this.userId = user.getId();
+        this.id = user.getId();
         this.userName = user.getUserName();
         this.createDate = user.getCreateDate();
     }

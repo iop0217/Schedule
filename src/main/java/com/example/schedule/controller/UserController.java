@@ -15,9 +15,9 @@ import java.util.List;
 public class UserController {
     private final UserService userService;
 
-    // 유저 생성
-    @PostMapping
-    public UserResponseDto createSchedule(@RequestBody UserRequestDto requestDto) {
+    // 유저 생성 - 회원가입
+    @PostMapping("/signup")
+    public UserResponseDto signup(@RequestBody UserRequestDto requestDto) {
         return userService.createUser(requestDto);
     }
 

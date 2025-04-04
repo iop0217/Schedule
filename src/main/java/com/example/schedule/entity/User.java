@@ -18,23 +18,25 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String userName;
+
+    @Column(nullable = false, unique = true)
+    private String email;
 
     @Column(nullable = false)
     private String password;
 
     @CreatedDate
     private LocalDateTime createDate;
-    @LastModifiedDate
-    private LocalDateTime updateDate;
 
-    public User(String userName, String password) {
+    public User(String userName, String email, String password) {
         this.userName = userName;
+        this.email = email;
         this.password = password;
     }
 
-    public void update(String password) {
-        this.password = password;
+    public void update(String userName) {
+        this.userName = userName;
     }
 }
